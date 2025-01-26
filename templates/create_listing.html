@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+    {% block title %}
+    <title>Create Job Listing</title>
+    {% endblock %}
+    
+    {% block header %}
+    <h1>Create a New Job Listing</h1>
+    {% endblock %}
+    
+    {% block content %}
+    <form action="/create_listing" method="post">
+        
+        <label for="company">Company:</label>
+        <input type="text" name="company"><br><br>
+
+        <label for="title">Job Title:</label>
+        <input type="text" name="title" required><br><br>
+
+        <label for="description">Job Description:</label>
+        <textarea name="description" rows="4" cols="50" required></textarea><br><br>        
+
+        <input type="submit" value="Create Job">
+    </form>
+    {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title> Job Listings </title>
+{% endblock %}
+
+{% block content %}
+<form method="GET" action="{{ url_for('jobs') }}">
+    <select name="category">
+        <option value="">All Categories</option>
+        <option value="Accounting_Finance">Accounting & Finance</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Healthcare_Nursing">Healthcare & Nursing</option>
+        <option value="Sales">Sales</option>
+    </select>
+    <input type="submit" value="Filter">
+</form>
+
+<ul>
+    {% for job in jobs %}
+        <li><a href="{{ url_for('job_detail', job_id=job.id) }}">{{ job.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

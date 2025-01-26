@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block header %}
+<h2>Job Listing Created</h2>
+{% endblock %}
+
+{% block content %}
+    <p>Job listing created with ID: {{ job_id }}.</p>
+    <a href="/jobs/{{ job_id }}">View Job</a>
+{% endblock %}

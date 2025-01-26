@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block header %}
+<h2>Recommended Category</h2>
+{% endblock %}
+{% block content %}
+<form action="/confirm_category" method="post">
+    <!-- Display recommended categories as checkboxes -->
+    {% for category in recommended_categories %}
+        <input type="checkbox" id="{{ category }}" name="category" value="{{ category }}">
+        <label for="{{ category }}">{{ category }}</label><br>
+    {% endfor %}
+    <br>
+    <input type="hidden" name="company" value="{{ company }}">
+    <input type="hidden" name="title" value="{{ title }}">
+    <input type="hidden" name="description" value="{{ description }}">
+    <input type="submit" value="Confirm Categories">
+</form>
+{% endblock %}
